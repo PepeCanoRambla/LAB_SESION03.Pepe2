@@ -1,0 +1,40 @@
+from turtle import Screen, Turtle
+print('Hola mundo')
+pantalla=Screen()
+pantalla.setup(425, 225)
+pantalla.screensize(400, 200)
+tort=Turtle()
+l=float(input('Dime el lado del cuadrado'))
+x=float(input('Dime la coordenada X del punto: '))
+y=float(input('Dime la coordenada Y del punto: '))
+r=(((l**2)+(l**2))**(1/2))/2
+tort.pencolor('red')
+tort.penup()
+tort.goto(-l/2, -l/2)
+tort.pendown()
+tort.goto(l/2, -l/2)
+tort.goto(l/2, l/2)
+tort.goto(-l/2, l/2)
+tort.goto(-l/2, -l/2)
+tort.penup()
+tort.pencolor('blue')
+tort.goto(0, -r)
+tort.pendown()
+tort.circle(r)
+tort.penup()
+tort.goto(x, y)
+if ((x<=l/2 and y<=l/2) and (x>=-l/2 and y>=-l/2)) or ((x<=l/2 and y>=-l/2) and (x>=-l/2 and y<=l/2)):
+    tort.pendown()
+    tort.pencolor('red')
+    tort.dot(5)
+else:
+    d=tort.distance(0, 0)
+    if d<r and d>-r:
+        tort.pendown()
+        tort.pencolor('blue')
+        tort.dot(5)
+    else:
+        tort.pendown()
+        tort.pencolor('green')
+        tort.dot(5)
+
